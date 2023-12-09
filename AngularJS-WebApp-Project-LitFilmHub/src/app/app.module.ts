@@ -9,12 +9,17 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
-import {HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
-import { MatToolbarModule } from "@angular/material/toolbar"; 
+import { MatToolbarModule } from "@angular/material/toolbar";
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthInterceptor } from './login/auth.interceptor';
+import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +36,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
 
     MatButtonModule,
     MatFormFieldModule,
@@ -39,7 +45,13 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 
 
   ],
-  providers: [],
+  providers: [    
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
