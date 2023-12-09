@@ -1,0 +1,17 @@
+
+
+.home-container {
+    
+    height: 100vh;
+
+    background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  

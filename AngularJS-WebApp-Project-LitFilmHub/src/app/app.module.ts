@@ -10,7 +10,7 @@ import { FilmDetailComponent } from './film-detail/film-detail.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
@@ -30,7 +30,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
+    ReactiveFormsModule,
 
     MatButtonModule,
     MatFormFieldModule,

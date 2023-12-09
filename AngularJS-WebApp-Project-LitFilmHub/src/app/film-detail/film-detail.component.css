@@ -1,0 +1,52 @@
+/* film-detail.component.css */
+
+.film-detail-page-container {
+    
+    height: 100vh;
+  
+    background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .film-detail-container {
+    max-width: 800px;
+    width: 100%; 
+    height: 75vh;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .film-detail-header {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  .film-cover-image-placeholder {
+    width: 300px;
+    height: 370px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .film-title-placeholder,
+  .film-director-placeholder,
+  .film-genre-placeholder,
+  .film-release-year-placeholder,
+  .film-rating-placeholder,
+  .film-synopsis-placeholder {
+    background-color: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  

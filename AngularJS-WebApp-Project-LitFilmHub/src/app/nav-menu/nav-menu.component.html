@@ -1,6 +1,43 @@
-<header>
+<!-- <header>
     <a [routerLink]="['/']">Home</a>
     <a [routerLink]="['/search']">Search</a>
     <a [routerLink]="['/book-detail']">Book Detail</a>
     <a [routerLink]="['/film-detail']">Film Detail</a>
 </header>
+ -->
+
+<!-- <header>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="custom-icon-button" [routerLink]="['/']">
+          <mat-icon>home</mat-icon>
+        </button>
+  
+        <a mat-flat-button color="primary" [routerLink]="['/search']">Search</a>
+        <a mat-flat-button color="primary" [routerLink]="['/book-detail']">Book Detail</a>
+        <a mat-flat-button color="primary" [routerLink]="['/film-detail']">Film Detail</a>
+  
+
+        <span class="separator"></span>
+
+    </mat-toolbar>
+  </header>
+   -->
+
+   <header>
+    <mat-toolbar color="primary">
+        <!-- <button mat-icon-button class="custom-icon-button" [routerLink]="['/']">
+          <mat-icon>home</mat-icon>
+        </button> -->
+  
+        <!-- Apply custom class to all buttons or links as needed -->
+        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/']">Home</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/search']">Search</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/book-detail']">Book Detail</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/film-detail']">Film Detail</a>
+  
+        <span class="separator"></span>
+  
+        <!-- ... login/logout links ... -->
+    </mat-toolbar>
+  </header>
+  
