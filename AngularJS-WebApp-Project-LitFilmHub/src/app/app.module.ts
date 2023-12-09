@@ -9,6 +9,12 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
 import { SearchComponent } from './search/search.component';
 import { LoginComponent } from './login/login.component';
+import {HttpClientModule } from '@angular/common/http';
+
+import { MatButtonModule } from "@angular/material/button";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
+import { MatToolbarModule } from "@angular/material/toolbar"; 
 
 @NgModule({
   declarations: [
@@ -22,7 +28,16 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatToolbarModule 
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
