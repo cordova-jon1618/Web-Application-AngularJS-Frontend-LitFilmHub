@@ -2,27 +2,35 @@
 <p>book-detail works!</p>
 
 <div class="book-detail-page-container">
+  <div *ngIf="books.length > 0; else noDataTemplate" class="book-detail-container">
+    <div *ngFor="let book of books">
+      <div class="book-detail-header">
+        <div class="book-cover-image-placeholder"></div>
+        <div class="book-info">
+          <div class="book-title-placeholder">{{book.title}}</div>
+          <div class="book-author-placeholder">{{book.author}}</div>
+          <div class="book-genre-placeholder">{{book.genre}}</div>
+          <div class="book-publication-year-placeholder">{{book.publicationYear}}</div>
+          <div class="book-isbn-placeholder">{{book.isbn}}</div>
+        </div>
+      </div>
+      <div class="book-summary-placeholder">{{book.summary}}</div>
+    </div>
+  </div>
+
+  <ng-template #noDataTemplate>
     <div class="book-detail-container">
       <div class="book-detail-header">
-
         <div class="book-cover-image-placeholder"></div>
-  
-
         <div class="book-info">
-
           <div class="book-title-placeholder">Title Placeholder</div>
-          
           <div class="book-author-placeholder">Author Placeholder</div>
-          
           <div class="book-genre-placeholder">Genre Placeholder</div>
-          
           <div class="book-publication-year-placeholder">Publication Year Placeholder</div>
-          
           <div class="book-isbn-placeholder">ISBN Placeholder</div>
         </div>
       </div>
-  
       <div class="book-summary-placeholder">Summary Placeholder</div>
     </div>
-  </div>
-  
+  </ng-template>
+</div>

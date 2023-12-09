@@ -1,34 +1,36 @@
 <!-- film-detail.component.html -->
-
 <p>film-detail works!</p>
 
 <div class="film-detail-page-container">
+  <div *ngIf="films.length > 0; else noDataTemplate" class="film-detail-container">
+    <div *ngFor="let film of films">
+      <div class="film-detail-header">
+        <div class="film-cover-image-placeholder"></div>
+        <div class="film-info">
+          <div class="film-title-placeholder">{{film.title}}</div>
+          <div class="film-director-placeholder">{{film.director}}</div>
+          <div class="film-genre-placeholder">{{film.genre}}</div>
+          <div class="film-release-year-placeholder">{{film.releaseYear}}</div>
+          <div class="film-rating-placeholder">{{film.rating}}</div>
+        </div>
+      </div>
+      <div class="film-synopsis-placeholder">{{film.synopsis}}</div>
+    </div>
+  </div>
+
+  <ng-template #noDataTemplate>
     <div class="film-detail-container">
       <div class="film-detail-header">
-
         <div class="film-cover-image-placeholder"></div>
-  
-
         <div class="film-info">
-
           <div class="film-title-placeholder">Title Placeholder</div>
-          
-
           <div class="film-director-placeholder">Director Placeholder</div>
-          
-
           <div class="film-genre-placeholder">Genre Placeholder</div>
-          
-
           <div class="film-release-year-placeholder">Release Year Placeholder</div>
-          
-
           <div class="film-rating-placeholder">Rating Placeholder</div>
         </div>
       </div>
-  
-
       <div class="film-synopsis-placeholder">Synopsis Placeholder</div>
     </div>
-  </div>
-  
+  </ng-template>
+</div>
