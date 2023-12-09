@@ -15,14 +15,16 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 { path: '', component: HomeComponent, pathMatch: 'full' },
 { path: 'search', component: SearchComponent },
 { path: 'book-detail', component: BookDetailComponent },
 { path: 'film-detail', component: FilmDetailComponent },
+{ path: 'login', component: LoginComponent },
 ];
-17
+
 @NgModule({
 imports: [RouterModule.forRoot(routes)],
 exports: [RouterModule]
