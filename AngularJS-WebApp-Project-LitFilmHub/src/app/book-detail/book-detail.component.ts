@@ -11,16 +11,28 @@ import { environment } from 'src/environments/environment.development';
 })
 export class BookDetailComponent {
   books: Book[] = [];
+  currentIndex = 0;
 
   constructor(private http: HttpClient) {
     this.http.get<Book[]>(environment.baseUrl + '/api/book-detail').subscribe({
       next: (result) => {
         this.books = result;
+        this.currentIndex = 0;
       },
       error: (error) => {
         console.error('Error fetching books:', error);
       }
     });
+  }//end constructor
+
+  onNextClick() {
+    if (this.books.length > 0) {
+      this.currentIndex = (this.currentIndex + 1) % this.books.length;
+    }
+  }
+
+  get currentBook() {
+    return this.books.length > 0 ? this.books[this.currentIndex] : null;
   }
 }
 
