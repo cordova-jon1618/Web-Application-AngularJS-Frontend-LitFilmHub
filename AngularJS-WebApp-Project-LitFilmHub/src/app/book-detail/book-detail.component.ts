@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { Book } from './book';
 import { HttpClient } from '@angular/common/http';

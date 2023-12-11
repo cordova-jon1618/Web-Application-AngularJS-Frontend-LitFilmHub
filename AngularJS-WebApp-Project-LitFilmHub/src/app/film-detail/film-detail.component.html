@@ -2,20 +2,20 @@
 <p>film-detail works!</p>
 
 <div class="film-detail-page-container">
-  <div *ngIf="films.length > 0; else noDataTemplate" class="film-detail-container">
-    <div *ngFor="let film of films">
-      <div class="film-detail-header">
-        <div class="film-cover-image-placeholder"></div>
-        <div class="film-info">
-          <div class="film-title-placeholder">Title: {{film.title}}</div>
-          <div class="film-director-placeholder">Director: {{film.director}}</div>
-          <div class="film-genre-placeholder">Genre: {{film.genre}}</div>
-          <div class="film-release-year-placeholder">Release Year: {{film.releaseYear}}</div>
-          <div class="film-rating-placeholder">Rating: {{film.rating}}</div>
-        </div>
+  <div *ngIf="currentFilm; else noDataTemplate" class="film-detail-container">
+    <div class="film-detail-header">
+      <div class="film-cover-image-placeholder"></div>
+      <div class="film-info">
+        <div class="film-title-placeholder">Title: {{currentFilm.title}}</div>
+        <div class="film-director-placeholder">Director: {{currentFilm.director}}</div>
+        <div class="film-genre-placeholder">Genre: {{currentFilm.genre}}</div>
+        <div class="film-release-year-placeholder">Release Year: {{currentFilm.releaseYear}}</div>
+        <div class="film-rating-placeholder">Rating: {{currentFilm.rating}}</div>
       </div>
-      <div class="film-synopsis-placeholder">Synopsis: {{film.synopsis}}</div>
     </div>
+    <div class="film-synopsis-placeholder">Synopsis: {{currentFilm.synopsis}}</div>
+
+    <button (click)="onNextClick()">Next</button>
   </div>
 
   <ng-template #noDataTemplate>
@@ -31,6 +31,8 @@
         </div>
       </div>
       <div class="film-synopsis-placeholder">Synopsis Placeholder</div>
+
+      <button (click)="onNextClick()">Next</button>
     </div>
   </ng-template>
 </div>
