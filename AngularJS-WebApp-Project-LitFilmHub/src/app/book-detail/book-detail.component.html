@@ -2,22 +2,20 @@
 <p>book-detail works!</p>
 
 <div class="book-detail-page-container">
-  <div *ngIf="books.length > 0; else noDataTemplate" class="book-detail-container">
-    <div *ngFor="let book of books">
-      <div class="book-detail-header">
-        <div class="book-cover-image-placeholder"></div>
-        <div class="book-info">
-          <div class="book-title-placeholder">{{book.title}}</div>
-          <div class="book-author-placeholder">{{book.author}}</div>
-          <div class="book-genre-placeholder">{{book.genre}}</div>
-          <div class="book-publication-year-placeholder">{{book.publicationYear}}</div>
-          <div class="book-isbn-placeholder">{{book.isbn}}</div>
-        </div>
+  <div *ngIf="currentBook; else noDataTemplate" class="book-detail-container">
+    <div class="book-detail-header">
+      <div class="book-cover-image-placeholder"></div>
+      <div class="book-info">
+        <div class="book-title-placeholder">Title: {{currentBook.title}}</div>
+        <div class="book-author-placeholder">Author: {{currentBook.author}}</div>
+        <div class="book-genre-placeholder">Genre: {{currentBook.genre}}</div>
+        <div class="book-publication-year-placeholder">Publication Year: {{currentBook.publicationYear}}</div>
+        <div class="book-isbn-placeholder">ISBN: {{currentBook.isbn}}</div>
       </div>
-      <div class="book-summary-placeholder">{{book.summary}}</div>
-
-      <button (click)="onNextClick()">Next</button>
     </div>
+    <div class="book-summary-placeholder">Summary: {{currentBook.summary}}</div>
+
+    <button (click)="onNextClick()">Next</button>
   </div>
 
   <ng-template #noDataTemplate>
