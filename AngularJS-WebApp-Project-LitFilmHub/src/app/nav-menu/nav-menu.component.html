@@ -6,7 +6,9 @@
         <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/search']">Search</a>
         <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/book-detail']">Book Detail</a>
         <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/film-detail']">Film Detail</a>
-        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/member']">Member</a>
+        <!-- <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/member']">Member</a> -->
+        <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="!isLoggedIn" [routerLink]="['/member']">Member</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="isLoggedIn" [routerLink]="['/member']">My Member Profile</a>
         <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/discussion']">Discussion</a>
   
         <span class="separator"></span>

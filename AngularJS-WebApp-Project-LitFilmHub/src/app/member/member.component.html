@@ -5,3 +5,42 @@
     <h1>Please sign up to create a profile</h1>
 
 </div>
+
+<!-- member.component.html -->
+
+<div class="member-detail-page-container">
+    <div *ngIf="currentMember; else noDataTemplate" class="member-detail-container">
+      <div class="member-detail-header">
+        <!-- Placeholder for a member image or similar -->
+        <div class="member-image-placeholder"></div>
+        <div class="member-info">
+          <div class="member-name-placeholder">Name: {{ currentMember.firstName }} {{ currentMember.middleInitial }} {{ currentMember.lastName }}</div>
+          <div class="member-city-placeholder">City: {{ currentMember.city }}</div>
+          <div class="member-country-placeholder">Country: {{ currentMember.country }}</div>
+          <div class="member-email-placeholder">Email: {{ currentMember.email }}</div>
+          <div class="member-username-placeholder">Username: {{ currentMember.username }}</div>
+        </div>
+      </div>
+      <!-- Additional member details can be added here -->
+  
+      <!-- Next button -->
+      <button (click)="onNextClick()">Next</button>
+    </div>
+  
+    <ng-template #noDataTemplate>
+      <div class="member-detail-container">
+        <div class="member-detail-header">
+          <div class="member-image-placeholder"></div>
+          <div class="member-info">
+            <div class="member-name-placeholder">Name Placeholder</div>
+            <div class="member-city-placeholder">City Placeholder</div>
+            <div class="member-country-placeholder">Country Placeholder</div>
+            <div class="member-email-placeholder">Email Placeholder</div>
+            <div class="member-username-placeholder">Username Placeholder</div>
+          </div>
+        </div>
+        <h1>Please sign up to create a profile</h1>
+      </div>
+    </ng-template>
+  </div>
+  
