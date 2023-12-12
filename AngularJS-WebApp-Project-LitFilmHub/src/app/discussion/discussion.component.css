@@ -1,37 +1,108 @@
-.discussion-container {
-    height: 100vh;
-    background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
+    .discussion-container {
+        height: 100vh;
+        background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+    }
 
-.discussion-item {
-    max-width: 800px; /* Set maximum width */
-    width: 100%; /* Use full width of the container */
-    height: auto; /* Adjust height automatically based on content */
-    background-color: #f8f8f8; /* Background color for the item */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 20px;
-    margin-bottom: 20px; /* Space between items */
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-}
+    .discussion-item {
+        max-width: 800px; 
+        width: 100%; 
+        height: auto; 
+        background-color: #f8f8f8; 
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+        padding: 20px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+    }
 
-.member-id {
-    margin-right: 20px;
-    flex-shrink: 0;
-}
+    .member-id {
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
 
-.discussion-content {
-    width: 300px; /* Adjust width as needed */
-    height: 370px; /* Adjust height as needed */
-    background-color: #e0e0e0; /* Background color for the content */
-    border-radius: 4px; /* Rounded corners for content */
-    padding: 10px;
-    box-sizing: border-box;
-}
+    .discussion-content {
+        width: 700px; 
+        height: 70px;
+        background-color: #e0e0e0; 
+        border-radius: 4px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+
+    .main-container {
+        display: flex;
+        height: 100vh;
+    }
+
+
+    .input-container {
+        width: 100%; 
+        padding: 20px;
+        box-sizing: border-box;
+        background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%);
+        overflow-y: auto; /* Enable scrolling if content overflows */
+        align-items: center;
+        margin: auto; /* Center horizontally */
+    }
+    
+
+    .input-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center vertically */
+        align-items: center;
+        /* Removed the gradient background */
+    }
+
+    .input-container button {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        /* Add additional button styling as needed */
+    }
+
+    .input-wrapper {
+        background: linear-gradient(135deg, #FFF9C4 0%, #FFE0B2 100%); /* Gradient background */
+        width: 100%; /* Full width of the page */
+        display: flex;
+        justify-content: center; /* Center .input-container horizontally */
+    }
+    
+    .input-container {
+        width: 100%; /* Fixed width for the input container */
+        padding: 20px;
+        box-sizing: border-box;
+        overflow-y: auto; /* Enable scrolling if content overflows */
+        align-items: center;
+        /* Removed the gradient background */
+    }
+    
+    /* Styles for the input and button inside input-container */
+    .input-container input {
+        width: 25%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    
+    .input-container button {
+        width: 25%;
+        padding: 10px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    
+

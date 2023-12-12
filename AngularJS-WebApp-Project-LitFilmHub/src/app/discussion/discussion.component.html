@@ -1,32 +1,49 @@
-<!-- discussion.component.html -->
-<p>discussion works!</p>
+<p>Discussion works!</p>
 
-<div class="discussion-container">
-  <!-- Check if there is a current discussion -->
-  <div *ngIf="currentDiscussion; else noDataTemplate" class="discussion-item">
-    <div class="member-id">
-      Member ID: {{ currentDiscussion.memberID }}
-    </div>
-    <div class="discussion-content">
-      <p>Discussion: {{ currentDiscussion.content }}</p>
-    </div>
+<!-- Check if the user is logged in -->
+<div *ngIf="isLoggedIn; else notLoggedInTemplate">
+  
+  <div class="discussion-page-container">
+          <!-- Input box section -->
+          <div class="input-container">
+            <input type="text" #messageInput placeholder="Enter your message" />
+            <button (click)="sendMessage(messageInput.value)">Send</button>
+          </div>
+    <div *ngIf="discussions && discussions.length > 0; else noDataTemplate" class="discussion-container">
+      <!-- Input box section -->
+      <!-- <div class="input-container">
+        <input type="text" #messageInput placeholder="Enter your message" />
+        <button (click)="sendMessage(messageInput.value)">Send</button>
+      </div> -->
 
-    <!-- Next button -->
-    <button (click)="onNextClick()">Next</button>
+      <!-- Iterate over all discussions -->
+      <div *ngFor="let discussion of discussions" class="discussion-item">
+        <div class="member-id">Member ID: {{ discussion.memberID }}</div>
+        <div class="discussion-content">
+          <p>Discussion: {{ discussion.content }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- No discussions available template -->
+    <ng-template #noDataTemplate>
+      <div class="discussion-container">
+        <h1>No discussions available.</h1>
+      </div>
+    </ng-template>
   </div>
-
-  <!-- No data template (placeholder) -->
-  <ng-template #noDataTemplate>
-    <div class="discussion-item">
-      <div class="member-id">
-        Member ID Placeholder
-      </div>
-      <div class="discussion-content">
-        <p>Discussion Content Placeholder</p>
-      </div>
-
-      <!-- Next button remains the same -->
-      <button (click)="onNextClick()">Next</button>
-    </div>
-  </ng-template>
 </div>
+
+<!-- Not logged in template -->
+<ng-template #notLoggedInTemplate>
+  <div class="discussion-page-container">
+    <div class="discussion-header">
+      <div class="discussion-container">
+        <h1>Login Required</h1>
+        <p>Please Sign In to View and Participate in Discussions</p>
+        <button class="custom-button" [routerLink]="['/login']">Go to Login</button>
+      </div> 
+    </div>
+  </div>
+</ng-template>
+
