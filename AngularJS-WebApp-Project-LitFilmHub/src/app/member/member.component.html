@@ -1,14 +1,8 @@
 <p>member works!</p>
 
-<div class="member-container">
-
-    <h1>Please sign up to create a profile</h1>
-
-</div>
-
-<!-- member.component.html -->
-
-<div class="member-detail-page-container">
+<!-- Check if the user is logged in and has a member profile -->
+<div *ngIf="isLoggedIn; else notLoggedInTemplate">
+  <div class="member-detail-page-container">
     <div *ngIf="currentMember; else noDataTemplate" class="member-detail-container">
       <div class="member-detail-header">
         <!-- Placeholder for a member image or similar -->
@@ -22,11 +16,11 @@
         </div>
       </div>
       <!-- Additional member details can be added here -->
-  
       <!-- Next button -->
       <button (click)="onNextClick()">Next</button>
     </div>
   
+    <!-- Template displayed if currentMember is null -->
     <ng-template #noDataTemplate>
       <div class="member-detail-container">
         <div class="member-detail-header">
@@ -39,8 +33,15 @@
             <div class="member-username-placeholder">Username Placeholder</div>
           </div>
         </div>
-        <h1>Please sign up to create a profile</h1>
+        <h1>No member data available</h1>
       </div>
     </ng-template>
   </div>
-  
+</div>
+
+<!-- Template displayed if the user is not logged in -->
+<ng-template #notLoggedInTemplate>
+  <div class="member-container">
+    <h1>Please sign up to create a profile</h1>
+  </div>
+</ng-template>
