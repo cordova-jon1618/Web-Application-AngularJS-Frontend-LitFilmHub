@@ -1,0 +1,31 @@
+<!-- discussion.component.html -->
+
+<div class="discussion-container">
+  <!-- Check if there is a current discussion -->
+  <div *ngIf="currentDiscussion; else noDataTemplate" class="discussion-item">
+    <div class="member-id">
+      Member ID: {{ currentDiscussion.memberID }}
+    </div>
+    <div class="discussion-content">
+      <p>Discussion: {{ currentDiscussion.content }}</p>
+    </div>
+
+    <!-- Next button -->
+    <button (click)="onNextClick()">Next</button>
+  </div>
+
+  <!-- No data template (placeholder) -->
+  <ng-template #noDataTemplate>
+    <div class="discussion-item">
+      <div class="member-id">
+        Member ID Placeholder
+      </div>
+      <div class="discussion-content">
+        <p>Discussion Content Placeholder</p>
+      </div>
+
+      <!-- Next button remains the same -->
+      <button (click)="onNextClick()">Next</button>
+    </div>
+  </ng-template>
+</div>

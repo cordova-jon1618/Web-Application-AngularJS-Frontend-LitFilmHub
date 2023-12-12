@@ -20,6 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AuthInterceptor } from './login/auth.interceptor';
 import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { MemberComponent } from './member/member.component';
+import { DiscussionComponent } from './discussion/discussion.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
     BookDetailComponent,
     FilmDetailComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    MemberComponent,
+    DiscussionComponent
   ],
   imports: [
     BrowserModule,
