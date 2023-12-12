@@ -41,7 +41,14 @@
 
 <!-- Template displayed if the user is not logged in -->
 <ng-template #notLoggedInTemplate>
-  <div class="member-container">
-    <h1>Please sign up to create a profile</h1>
+  <div class="member-detail-page-container">
+    <div class="member-detail-header">
+      <div class="member-container">
+        <h1>Login Required</h1>
+        <h3>Members: </h3>
+        <p>Please Sign In to Access Your Member Profile</p>
+        <button class="custom-button" [routerLink]="['/login']">Go to Login</button>
+      </div> 
+    </div>
   </div>
 </ng-template>

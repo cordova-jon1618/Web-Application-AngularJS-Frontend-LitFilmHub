@@ -11,15 +11,21 @@ import { LoginRequest } from './login-request';
 })
 export class LoginComponent implements OnInit{
    form!: UntypedFormGroup;
+   isLoggedIn: boolean = false;
 
   constructor(protected authService: AuthService) {}
 
   ngOnInit(): void {
-      this.form = new FormGroup({
-        userName: new FormControl("", Validators.required),
-        password: new FormControl("", Validators.required)
-      })
-    }
+    this.form = new FormGroup({
+      userName: new FormControl("", Validators.required),
+      password: new FormControl("", Validators.required)
+    });
+
+    // Update isLoggedIn based on the AuthService
+    this.authService.authStatus.subscribe(status => {
+      this.isLoggedIn = status;
+    });
+  }
 
     onSubmit(){
       let loginRequest: LoginRequest = {
@@ -29,6 +35,7 @@ export class LoginComponent implements OnInit{
       this.authService.login(loginRequest).subscribe({
         next: result => {
           console.log(result.message);
+          this.isLoggedIn = true;   
         }, 
         error: error => {
           console.log(error);

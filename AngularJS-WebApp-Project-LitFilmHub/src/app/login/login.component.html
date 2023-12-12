@@ -1,24 +1,33 @@
+
 <p>login works!</p>
-<div class="login">
-    <h1>Login</h1>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+<div class="login-container" *ngIf="!isLoggedIn; else loggedInTemplate">
+    <div class="login">
+        <h1>Login</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <mat-form-field>
-            <mat-label>Name:</mat-label>
-            <input matInput formControlName="userName" required="required" placeholder="Enter user name">
-        </mat-form-field>
-        
-        <mat-form-field>
-            <mat-label>Password:</mat-label>
-            <input matInput type="password" formControlName="password" required="required" placeholder="Enter password">
-        </mat-form-field>
+            <div class="custom-form-field">
+                <label for="userName">Username:</label>
+                <input id="userName" type="text" formControlName="userName" required placeholder="Enter Username">
+            </div>
+            
+            <div class="custom-form-field">
+                <label for="password">Password:</label>
+                <input id="password" type="password" formControlName="password" required placeholder="Enter Password">
+            </div>
 
-        <div>
-            <button mat-flat-button color="primary" type="submit">Login</button>
-        </div>
-
-        <div>
-            <button mat-flat-button color="secondary" [routerLink]="['/']">Cancel</button>
-        </div>
-    </form>
+            <div class="button-container">
+                <button type="submit">Login</button>
+                <button [routerLink]="['/']">Cancel</button>
+            </div>
+        </form>
+    </div>
 </div>
+
+<ng-template #loggedInTemplate>
+    <div class="login-container">
+      <div class="login">
+        <h1>You Are Logged In</h1>
+        <h3>Thank you for being a Member</h3>
+      </div>
+    </div>
+  </ng-template>
