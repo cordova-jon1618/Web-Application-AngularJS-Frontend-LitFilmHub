@@ -26,8 +26,10 @@ export class DiscussionComponent {
   }//end constructor
 
   onNextClick() {
+    console.log("Discussion length: ", this.discussions.length);
     if (this.discussions.length > 0) {
       this.currentIndex = (this.currentIndex + 1) % this.discussions.length;
+      console.log("Discussion index: ", this.currentIndex);
     }
   }
 
