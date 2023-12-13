@@ -55,12 +55,6 @@ export class DiscussionComponent {
     });
   }
 
-  // sendMessage(message: string) {
-  //   console.log('Message to send:', message);
-  //   // Add logic to handle sending the message
-  //   // Reset the message input after sending
-  //   this.message = '';
-  // }
 
   sendMessage(message: string) {
     // Check if the message is empty before sending
@@ -79,14 +73,13 @@ export class DiscussionComponent {
     }).subscribe({
       next: () => {
         console.log('Message sent successfully');
-        // Optionally, you can fetch discussions again to refresh the list
         this.fetchDiscussions();
       },
       error: (error) => {
         console.error('Error sending message:', error);
       }
     });
-  }
+  }//end sendMessage
   
   // onNextClick() {
   //   console.log("Discussion length: ", this.discussions.length);

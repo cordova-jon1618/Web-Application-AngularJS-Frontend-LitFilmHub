@@ -36,14 +36,16 @@
 
 <!-- Not logged in template -->
 <ng-template #notLoggedInTemplate>
-  <div class="discussion-page-container">
+  <!-- <div class="discussion-page-container">
     <div class="discussion-header">
-      <div class="discussion-container">
-        <h1>Login Required</h1>
-        <p>Please Sign In to View and Participate in Discussions</p>
-        <button class="custom-button" [routerLink]="['/login']">Go to Login</button>
-      </div> 
-    </div>
+      <div class="discussion-container"> -->
+  <div class="discussion-container">
+        <div class="member-container">
+          <h1>Login Required</h1>
+          <h3>Discussions: </h3>
+          <p>Please Sign In to View and Participate in Discussions</p>
+          <button class="custom-button" [routerLink]="['/login']">Go to Login</button>
+        </div> 
   </div>
-</ng-template>
 
+</ng-template>

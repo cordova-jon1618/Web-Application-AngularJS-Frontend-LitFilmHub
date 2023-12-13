@@ -9,7 +9,8 @@
         <!-- <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/member']">Member</a> -->
         <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="!isLoggedIn" [routerLink]="['/member']">Member</a>
         <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="isLoggedIn" [routerLink]="['/member']">My Member Profile</a>
-        <a mat-flat-button class="custom-icon-button" color="primary" [routerLink]="['/discussion']">Discussion</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="!isLoggedIn" [routerLink]="['/discussion']">Discussion</a>
+        <a mat-flat-button class="custom-icon-button" color="primary" *ngIf="isLoggedIn" [routerLink]="['/discussion']">My Discussion Board</a>
   
         <span class="separator"></span>
         <a mat-flat-button color="primary" *ngIf="!isLoggedIn" color="primary" [routerLink]="['/login']">Login</a>
