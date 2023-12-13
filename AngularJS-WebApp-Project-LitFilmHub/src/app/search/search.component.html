@@ -1,8 +1,32 @@
-<p>search works!</p>
+<p>Search works!</p>
 
 <div class="search-container">
-
     <h1>Search and browse the literature and films in our library</h1>
     <p>Enjoy exploring!</p>
 
+    <!-- Button to fetch data -->
+    <!-- <button (click)="fetchData()">Fetch Data</button> -->
+
+    <div class="content">
+        <div class="column books">
+            <h2>Books</h2>
+            <div class="scroll-container">
+                <!-- Loop through books array and display each book -->
+                <div *ngFor="let book of books">
+                    <p>{{ book.title }}</p>
+                    <!-- Add more book details as needed -->
+                </div>
+            </div>
+        </div>
+        <div class="column films">
+            <h2>Films</h2>
+            <div class="scroll-container">
+                <!-- Loop through films array and display each film -->
+                <div *ngFor="let film of films">
+                    <p>{{ film.title }}</p>
+                    <!-- Add more film details as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
