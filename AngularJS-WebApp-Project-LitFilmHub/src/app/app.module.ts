@@ -23,6 +23,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MemberComponent } from './member/member.component';
 import { DiscussionComponent } from './discussion/discussion.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 
 @NgModule({
   declarations: [
@@ -51,6 +53,10 @@ import { DiscussionComponent } from './discussion/discussion.component';
 
   ],
   providers: [    
+    {
+      provide: LocationStrategy,  
+      useClass: HashLocationStrategy
+    },
     {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
