@@ -69,12 +69,13 @@ export class DiscussionComponent {
     this.http.post(environment.baseUrl + '/api/discussion/addMessage', JSON.stringify(message), {
       headers: {
         'Content-Type': 'application/json'
-      }
-    }).subscribe({
-      next: () => {
-        console.log('Message sent successfully');
-        this.fetchDiscussions();
       },
+      responseType: 'text'
+    }).subscribe({
+    next: (response) => {
+      console.log('Message sent successfully:', response);
+      this.fetchDiscussions();
+    },
       error: (error) => {
         console.error('Error sending message:', error);
       }
